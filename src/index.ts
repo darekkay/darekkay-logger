@@ -10,7 +10,7 @@ const level: { [key: string]: LOG_LEVEL } = {
   test: "error",
 };
 
-logLevel.setDefaultLevel(level[process.env.NODE_ENV || "production"]);
+logLevel.setDefaultLevel(level[process.env.NODE_ENV || "development"]);
 
 const logger = {
   trace: (...args: any[]) => logLevel.trace(...args),
