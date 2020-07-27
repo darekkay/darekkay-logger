@@ -25,4 +25,4 @@ const logger = {
   setLevel: logLevel.setLevel,
 };
 
-export default logger;
+export = logger;
