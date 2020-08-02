@@ -13,18 +13,24 @@
     "loglevel": "1.6.8"
   },
   "devDependencies": {
-    "@darekkay/eslint-config": "1.0.3",
-    "@types/node": "14.0.26",
-    "@typescript-eslint/eslint-plugin": ">=3.4.0",
-    "@typescript-eslint/parser": ">=3.4.0",
-    "eslint": ">=7.0.0",
+    "@darekkay/eslint-config": "2.1.0",
+    "@types/node": "14.0.27",
+    "@typescript-eslint/eslint-plugin": ">=3.7.1",
+    "@typescript-eslint/parser": ">=3.7.1",
+    "cross-env": "7.0.2",
+    "eslint": ">=7.6.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-config-react-app": "5.2.1",
-    "eslint-plugin-import": ">=2.20.0",
+    "eslint-plugin-import": ">=2.22.0",
+    "eslint-plugin-node": "11.1.0",
     "eslint-plugin-prettier": ">=3.1.4",
+    "eslint-plugin-unicorn": "21.0.0",
     "prettier": "2.0.5",
     "ts-node": "8.10.2",
     "typescript": "3.9.7"
+  },
+  "engines": {
+    "node": ">=12.16.3"
   },
   "files": [
     "/dist/index.js",
@@ -42,11 +48,11 @@
   },
   "scripts": {
     "build": "tsc",
-    "ci": "npm run lint:check",
-    "format": "prettier --write -- \"src/**/*.{js,ts,json,md}\"",
-    "lint:check": "tsc && eslint src/**/*.{ts,tsx,js} --max-warnings=0",
-    "lint:fix": "eslint --fix src/**/*.{ts,tsx,js}",
-    "prepublishOnly": "npm run ci && npm run build",
+    "ci": "cross-env CI=true npm run lint",
+    "format": "prettier --write .",
+    "lint": "tsc && eslint .",
+    "lint:fix": "eslint --fix .",
+    "prepublishOnly": "npm run ci",
     "start": "ts-node src/example.ts"
   },
   "types": "./dist/index.d.ts"

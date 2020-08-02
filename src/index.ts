@@ -1,4 +1,4 @@
-import logLevel from "loglevel";
+import logLevel, { LogLevelDesc } from "loglevel";
 import symbols from "log-symbols";
 import { red, blue, yellow } from "kleur";
 
@@ -10,7 +10,7 @@ const level: { [key: string]: LOG_LEVEL } = {
   test: "error",
 };
 
-logLevel.setDefaultLevel(level[process.env.NODE_ENV || "development"]);
+logLevel.setDefaultLevel(level[process.env.NODE_ENV ?? "development"]);
 
 const logger = {
   trace: (...args: any[]) => logLevel.trace(...args),
@@ -22,7 +22,8 @@ const logger = {
   log: (...args: any[]) => logLevel.log(" ", ...args),
   success: (...args: any[]) => logLevel.info(red(symbols.success), ...args),
 
-  setLevel: logLevel.setLevel,
+  setLevel: (levelDescription: LogLevelDesc, persist?: boolean) =>
+    logLevel.setLevel(levelDescription, persist),
 };
 
 export = logger;
