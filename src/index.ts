@@ -4,7 +4,7 @@ import { red, blue, yellow } from "kleur";
 
 type LOG_LEVEL = "trace" | "debug" | "info" | "warn" | "error" | "silent";
 
-const level: { [key: string]: LOG_LEVEL } = {
+const level: Record<string, LOG_LEVEL> = {
   development: "debug",
   production: "info",
   test: "error",
