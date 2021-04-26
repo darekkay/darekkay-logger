@@ -15,7 +15,7 @@ logLevel.setDefaultLevel(level[process.env.NODE_ENV ?? "development"]);
 const logger = {
   trace: (...args: any[]) => logLevel.trace(...args),
   debug: (...args: any[]) => logLevel.debug(" ", ...args),
-  info: (...args: any[]) => logLevel.warn(blue(symbols.info), ...args),
+  info: (...args: any[]) => logLevel.info(blue(symbols.info), ...args),
   warn: (...args: any[]) => logLevel.warn(yellow(symbols.warning), ...args),
   error: (...args: any[]) => logLevel.error(red(symbols.error), ...args),
 
