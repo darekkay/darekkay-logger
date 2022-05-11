@@ -12,10 +12,10 @@
     "loglevel": "1.8.0"
   },
   "devDependencies": {
-    "@darekkay/scripts": "1.5.1",
-    "@types/node": "16.11.17",
-    "ts-node": "10.4.0",
-    "typescript": "4.5.4"
+    "@darekkay/scripts": "1.6.0",
+    "@types/node": "16.11.34",
+    "ts-node": "10.7.0",
+    "typescript": "4.6.4"
   },
   "engines": {
     "node": ">=12.22.0"
