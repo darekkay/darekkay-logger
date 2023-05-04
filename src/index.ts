@@ -1,5 +1,5 @@
 import logLevel, { LogLevelDesc } from "loglevel";
-import symbols from "log-symbols";
+import chalk from "chalk";
 
 type LOG_LEVEL = "trace" | "debug" | "info" | "warn" | "error" | "silent";
 
@@ -7,6 +7,19 @@ const level: Record<string, LOG_LEVEL> = {
   development: "debug",
   production: "info",
   test: "error",
+};
+
+/*
+ * Based on https://github.com/sindresorhus/log-symbols/blob/main/index.js
+ *
+ * Uses only characters that are supported by Windows CMD.
+ * https://en.wikipedia.org/wiki/Code_page_437
+ */
+const symbols = {
+  info: chalk.blue("i"),
+  success: chalk.green("√"),
+  warning: chalk.yellow("‼"),
+  error: chalk.red("×"),
 };
 
 logLevel.setDefaultLevel(level[process.env.NODE_ENV ?? "development"]);

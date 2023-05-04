@@ -1,5 +1,5 @@
 # npm-check-updates configuration
 
 reject:
-  # ESM
-  - "log-symbols"
+  # Pure ESM
+  - "chalk"

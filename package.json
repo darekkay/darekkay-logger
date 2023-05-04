@@ -8,7 +8,7 @@
     "email": "hello@darekkay.com"
   },
   "dependencies": {
-    "log-symbols": "4.1.0",
+    "chalk": "4.1.2",
     "loglevel": "1.8.1"
   },
   "devDependencies": {
