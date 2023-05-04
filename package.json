@@ -40,7 +40,7 @@
     "ci": "dks ci",
     "format": "dks format",
     "lint": "dks lint",
-    "prepublishOnly": "npm run ci",
+    "prepublishOnly": "npm run ci && npm run build",
     "start": "ts-node src/example.ts",
     "typecheck": "dks typecheck"
   },
