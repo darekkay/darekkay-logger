@@ -20,6 +20,7 @@ const symbols = {
   success: chalk.green("√"),
   warning: chalk.yellow("‼"),
   error: chalk.red("×"),
+  todo: chalk.gray("○"),
 };
 
 logLevel.setDefaultLevel(level[process.env.NODE_ENV ?? "development"]);
@@ -32,6 +33,7 @@ const logger = {
   error: (...args: any[]) => logLevel.error(symbols.error, ...args),
 
   log: (...args: any[]) => logLevel.log(" ", ...args),
+  todo: (...args: any[]) => logLevel.info(symbols.todo, ...args),
   success: (...args: any[]) => logLevel.info(symbols.success, ...args),
 
   setLevel: (levelDescription: LogLevelDesc, persist?: boolean) =>

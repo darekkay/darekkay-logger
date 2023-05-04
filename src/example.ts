@@ -9,5 +9,6 @@ logger.debug("Debug message");
 logger.info("Info message");
 logger.warn("Warn message");
 logger.error("Error message");
+logger.todo("TODO message");
 logger.success("Success message");
 logger.log("Log message");
