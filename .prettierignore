@@ -1,0 +1,12 @@
+node_modules/
+.idea/
+.git/
+public/
+dist/
+build/
+out/
+tmp/
+temp/
+coverage/
+
+*.min.js
